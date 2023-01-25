@@ -9,13 +9,24 @@
 </head>
 <body>
   <div id="app">
-      {{ name }}
+      {{ nextYear('こんにちは') }} 
   </div>
   <script>
     new Vue({
        el: '#app',
-       deta: {
-         name: 'コジコーダー'
+       data: {
+        person: {
+          name: 'コジコーダー',
+          age: 34
+        }
+       },
+       methods: {
+          nextYear(greeting){
+             return greeting + '! '+this.person.name + ' は　来年に ' +(this.person.age +1) + ' 才です ';
+          },
+          otherMethods(){
+            this.nextYear();
+          }
        }
     })
   </script>
