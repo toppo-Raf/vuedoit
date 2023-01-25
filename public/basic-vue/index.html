@@ -10,7 +10,7 @@
 <body>
   <div id="app">
       {{ nextYear('こんにちは') }} 
-      <input type="text" v-bind:value="inputData">//ここにdataを入れたい
+      <input v-bind:type="type" v-bind:value="inputData">//ここにdataを入れたい
   </div>
   <script>
     new Vue({
@@ -20,8 +20,8 @@
           name: 'コジコーダー',
           age: 34
         },
-        inputData: 'Hello'
-
+        inputData: 'Hello',
+        type:'number'
        },
        methods: {
           nextYear(greeting){
