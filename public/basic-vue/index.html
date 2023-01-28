@@ -9,7 +9,7 @@
 </head>
 <body>
   <div id="app">
-       <button onclick="alert('hello kossie coder')">Click me</button>
+       <button v-on:click="alert">Click me</button>
   </div>
   <script>
     new Vue({
@@ -18,7 +18,9 @@
         
        },
        methods: {
-        
+        alert(){
+          alert("hi kossie coder");
+        }
        }
     })
   </script>
