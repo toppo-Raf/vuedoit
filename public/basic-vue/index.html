@@ -9,17 +9,22 @@
 </head>
 <body>
   <div id="app">
-       <button v-on:click="alert">Click me</button>
+    {{ year }} <br>
+       <button v-on:click="plus">追加</button>
+       <button v-on:click="minus">削除</button>
   </div>
   <script>
     new Vue({
        el: '#app',
        data: {
-        
+        year: 2023
        },
        methods: {
-        alert(){
-          alert("hi kossie coder");
+        plus (){
+       this.year++;
+        },
+        minus(){
+          this.year--;
         }
        }
     })
