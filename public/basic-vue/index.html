@@ -9,32 +9,28 @@
 </head>
 <body>
   <div id="app">
-      {{ nextYear('こんにちは') }} 
-      <input :type="type" :value="inputData">//ここにdataを入れたい
-      <a :href="getKossieCoderLink('KossieCoder')">コジコーダーチャンネル</a>
+   <form v-on:submit.prevent="submit">
+    <input type="text"><br>
+    <button type="submit">Submit</button>
+   </form>
   </div>
   <script>
     new Vue({
        el: '#app',
        data: {
-        person: {
-          name: 'コジコーダー',
-          age: 34
-        },
-        inputData: 'Hello',
-        type:'number',
-        link:'https://www.youtube.com/'
+        year: 2023
        },
        methods: {
-        getKossieCoderLink(channel){
-          return this.link + channel;
+        plus (){
+       this.year++;
         },
-          nextYear(greeting){
-             return greeting + '! '+this.person.name + ' は　来年に ' +(this.person.age +1) + ' 才です ';
-          },
-          otherMethods(){
-            this.nextYear();
-          }
+        minus(){
+          this.year--;
+        },
+        submit(){
+          alert('submitted');
+          console.log('heelo');
+        }
        }
     })
   </script>
