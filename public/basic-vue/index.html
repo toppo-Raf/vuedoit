@@ -9,7 +9,10 @@
 </head>
 <body>
   <div id="app">
-    {{ reversedMessage() }}
+    <button @click="changeMessage">Click</button>
+    {{ reversedMessage }}
+    {{ reversedMessage }}
+    {{ reversedMessage }}
   </div>
   <script>
     new Vue({
@@ -18,14 +21,15 @@
        message: 'ハロウ',
        },
        methods: {
-        reversedMessage(){
-           return this.message.split('').reverse().join('')
+        changeMessage(){
+          this.message="ハローコジコーダー";
         }
-       },
-       computed:{
-        // reversedMessage(){
-        //   return this.message.split('').reverse().join('')
-        // }
+        },
+       
+       computed: {
+         reversedMessage(){
+           return this.message.split('').reverse().join('')
+         }
        },
     })
   </script>
