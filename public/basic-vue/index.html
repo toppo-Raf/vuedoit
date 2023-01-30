@@ -9,7 +9,7 @@
 </head>
 <body>
   <div id="app">
-   <form v-on:submit="submit">
+   <form v-on:submit.prevent="submit">
     <input type="text"><br>
     <button type="submit">Submit</button>
    </form>
