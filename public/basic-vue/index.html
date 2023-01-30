@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue基礎の話</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
-</head>
-<body>
-  <div id="app">
-    <button @click="changeMessage">Click</button>
-    {{ reversedMessage }}
-    {{ reversedMessage }}
-    {{ reversedMessage }}
-  </div>
-  <script>
-    new Vue({
-       el: '#app',
-       data: {
-       message: 'ハロウ',
-       },
-       methods: {
-        changeMessage(){
-          this.message="ハローコジコーダー";
-        }
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue基礎の話</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      {{ message }} <br>
+      <button @click="changeMessage">Click</button><br>
+      {{ updated }}
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'ハロウ',
+          updated: 'ちゃいます'
         },
-       
-       computed: {
-         reversedMessage(){
-           return this.message.split('').reverse().join('')
-         }
-       },
-    })
+        methods: {
+          changeMessage() {
+            this.message = "ハローコジコーダー";
+          }
+        },
+
+        computed: {
+          reversedMessage() {
+            return this.message.split('').reverse().join('')
+          }
+        },
+        watch: {
+          message(newVal,oldVal) {
+
+          }
+        }
+      })
   </script>
 </body>
 </html>
