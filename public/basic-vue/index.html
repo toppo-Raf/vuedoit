@@ -11,7 +11,7 @@
 
   <body>
     <div id="app">
-      {{ message }} <br>
+      {{ message }}<br> 
       <button @click="changeMessage">Click</button><br>
       {{ updated }}
     </div>
@@ -24,7 +24,7 @@
         },
         methods: {
           changeMessage() {
-            this.message = "ハローコジコーダー";
+            this.message = 'ハローコジコーダー';
           }
         },
 
@@ -34,8 +34,9 @@
           }
         },
         watch: {
-          message(newVal,oldVal) {
-
+          message(newVal, oldVal) {
+            console.log(newVal, oldVal);
+            this.updated = 'ほい';
           }
         }
       })
